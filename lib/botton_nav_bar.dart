@@ -37,7 +37,7 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        BuildNavItems(0, "home", 65, Grey),
+        BuildNavItems(0, "Home", 65, Grey),
         BuildNavItems(1, "product", 55, White),
         BuildNavItems(2, "trading", 75, Grey),
         BuildNavItems(3, "inventory", 70, White),
