@@ -15,46 +15,191 @@ class homeTest extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
-              SizedBox(
-                width: 358.0,
-                height: 187.0,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 8,
-                        offset: Offset(0, 7), // changes position of shadow
+              Stack(
+                children: [
+                  SizedBox(
+                    width: 358.0,
+                    height: 187.0,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          alignment: Alignment(0, -0.7),
+                          scale: 2,
+                          image: AssetImage('assets/homeAsset/person.png'),
+                        ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 8,
+                            offset: Offset(0, 7), // changes position of shadow
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                  Container(
+                    height: 187,
+                    width: 358,
+                    color: Colors.transparent,
+                    child: Stack(
+                      children: [
+                        Container(
+                          alignment: Alignment(0, 0.3),
+                          child: Text(
+                            "Tsabit",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          alignment: Alignment(0, 0.6),
+                          child: Text(
+                            "6283512654",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
             ],
           ),
         ),
         Align(
           alignment: Alignment(0, -0.375),
-          child: Container(
-            height: 57,
-            width: 321,
-            decoration: BoxDecoration(
-              color: Color(0xFFC5F1FF),
-              borderRadius: BorderRadius.all(Radius.circular(12)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 8,
-                  offset: Offset(0, 7), // changes position of shadow
+          child: Stack(
+            children: [
+              Container(
+                height: 57,
+                width: 321,
+                decoration: BoxDecoration(
+                  color: Color(0xFFC5F1FF),
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 8,
+                      offset: Offset(0, 7), // changes position of shadow
+                    ),
+                  ],
                 ),
-              ],
-            ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 15,
+                    ),
+                    Container(
+                      height: 48,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 3.2,
+                          ),
+                          Container(
+                            alignment: Alignment(0, 0),
+                            child: Text(
+                              "Tanggal Transaksi",
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Color(0xFF39B2D8),
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 5,
+                          ),
+                          Container(
+                            child: Text(
+                              "25/11/2004",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 15,
+                    ),
+                    Container(
+                      height: 50,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 3.2,
+                          ),
+                          Container(
+                            child: Text(
+                              "Lorem Ipsum",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Color(0xFF39B2D8),
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 5,
+                          ),
+                          Container(
+                            child: Text(
+                              "NULL",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 15,
+                    ),
+                    Container(
+                      height: 50,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 3.2,
+                          ),
+                          Container(
+                            child: Text(
+                              "Lorem Ipsum",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Color(0xFF39B2D8),
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 5,
+                          ),
+                          Container(
+                            child: Text(
+                              "NULL",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
         Align(
