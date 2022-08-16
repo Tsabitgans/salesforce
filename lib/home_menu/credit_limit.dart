@@ -41,7 +41,37 @@ class _creditLimitState extends State<creditLimit> {
                     width: 85,
                     decoration: BoxDecoration(
                       color: Color(0xFFC5F1FF),
+                      image: DecorationImage(
+                        image: AssetImage("assets/homeAsset/cash.png"),
+                      ),
                     ),
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        width: MediaQuery.of(context).size.width - 135,
+                        height: 40,
+                        child: Text(
+                          "Rp 0",
+                          style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 30,
+                        child: Text(
+                          "Credit Limit : 1",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      )
+                    ],
                   )
                 ],
               ),
@@ -71,7 +101,37 @@ class _creditLimitState extends State<creditLimit> {
                     width: 85,
                     decoration: BoxDecoration(
                       color: Color(0xFFC5F1FF),
+                      image: DecorationImage(
+                        image: AssetImage("assets/homeAsset/credit.png"),
+                      ),
                     ),
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        width: MediaQuery.of(context).size.width - 135,
+                        height: 40,
+                        child: Text(
+                          "Rp 0",
+                          style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 30,
+                        child: Text(
+                          "Credit Limit : 1",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      )
+                    ],
                   )
                 ],
               ),

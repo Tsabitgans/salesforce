@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/home_menu/credit_limit.dart';
+import 'package:project/home_menu/m_transaction.dart';
 
 class homeTest extends StatelessWidget {
   const homeTest({Key? key}) : super(key: key);
@@ -206,8 +207,12 @@ class homeTest extends StatelessWidget {
           alignment: Alignment(-0.85, -0.05),
           child: GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => creditLimit()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => creditLimit(),
+                ),
+              );
             },
             child: Container(
               height: 110,
@@ -237,26 +242,36 @@ class homeTest extends StatelessWidget {
         ),
         Align(
           alignment: Alignment(0.0, -0.05),
-          child: Container(
-            height: 110,
-            width: 110,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                alignment: Alignment(0.3, -0.7),
-                scale: 0.9,
-                image: AssetImage('assets/homeAsset/m_transaction.png'),
-              ),
-              color: Color(0xFFA7E2F4),
-              borderRadius: BorderRadius.all(Radius.circular(25)),
-            ),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => mTransaction(),
+                ),
+              );
+            },
             child: Container(
-              alignment: Alignment(0, 0.85),
-              child: Text(
-                "Monthly Trasaction",
-                textAlign: TextAlign.center,
-                style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  height: 1,
+              height: 110,
+              width: 110,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  alignment: Alignment(0.3, -0.7),
+                  scale: 0.9,
+                  image: AssetImage('assets/homeAsset/m_transaction.png'),
+                ),
+                color: Color(0xFFA7E2F4),
+                borderRadius: BorderRadius.all(Radius.circular(25)),
+              ),
+              child: Container(
+                alignment: Alignment(0, 0.85),
+                child: Text(
+                  "Monthly Trasaction",
+                  textAlign: TextAlign.center,
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    height: 1,
+                  ),
                 ),
               ),
             ),
