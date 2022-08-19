@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -12,12 +13,77 @@ class trading extends StatefulWidget {
 class _tradingState extends State<trading> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: 70,
+    return Padding(
+      padding: const EdgeInsets.only(top: 15),
+      child: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 38,
+        mainAxisSpacing: 18,
+        crossAxisCount: 3,
+        children: <Widget>[
+          buildIcon("monthly transaction", "m-transaction", 5),
+          buildIcon("yearly  transaction", "y-transaction", 7),
+          buildIcon("point and    deposit", "point-and-deposit", 7),
+          buildIcon("top 02 sales (quantity)", "top-20-sales-quantity", 7),
+          buildIcon("Top 20 sales (amount)", "top-20-sales-amount", 8),
+          buildIcon("Top 20 high margin", "top-20-high-margin", 8),
+          buildIcon("Top 20 declined product", "top-20-declined-product", 8),
+          buildIcon(
+              "Sales order oustanding Recap", "sales-order-outstanding", 5),
+          buildIcon("Sales forecast VS reality", "sale-forecast", 9),
+          buildIcon("Top 20 sales return", "top-20-sales-return", 8),
+          buildIcon(
+              "Top 20 return to vendor", "top-20-sales-return-to-vendor", 9),
+          buildIcon("Top 100 margin of item master",
+              "top-100-margin-of-item-master", 9),
+          buildIcon("Report of discount", "report-of-discount", 9),
+          buildIcon("Summary order / outgoing per month", "summary-order", 0),
+          buildIcon("Purchase order outstanding", "purchase-order", 9),
+          buildIcon("Top 20 quantity", "top-20-quantity", 13),
+          buildIcon("Sales shipment inquiry", "sales-shipment", 5),
+          buildIcon("Sales order outstanding", "sales-order", 5),
+        ],
+      ),
+    );
+  }
+
+  Container buildIcon(String title, String image, double height) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: Container(
+        child: Column(
+          children: [
+            Container(
+              height: 45,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  alignment: Alignment(0, -0.45),
+                  scale: 0.75,
+                  image: AssetImage('assets/tradingAsset/' + image + '.png'),
+                ),
+              ),
+            ),
+            Container(
+              height: height,
+            ),
+            Container(
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            )
+          ],
         ),
-      ],
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(25)),
+        color: Color(0xFFA7E2F4),
+      ),
     );
   }
 }
