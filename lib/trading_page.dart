@@ -22,33 +22,36 @@ class _tradingState extends State<trading> {
         mainAxisSpacing: 18,
         crossAxisCount: 3,
         children: <Widget>[
-          buildIcon("monthly transaction", "m-transaction", 5),
-          buildIcon("yearly  transaction", "y-transaction", 7),
-          buildIcon("point and    deposit", "point-and-deposit", 7),
-          buildIcon("top 02 sales (quantity)", "top-20-sales-quantity", 7),
-          buildIcon("Top 20 sales (amount)", "top-20-sales-amount", 8),
-          buildIcon("Top 20 high margin", "top-20-high-margin", 8),
-          buildIcon("Top 20 declined product", "top-20-declined-product", 8),
-          buildIcon(
+          buildIconTrading("monthly transaction", "m-transaction", 5),
+          buildIconTrading("yearly  transaction", "y-transaction", 7),
+          buildIconTrading("point and    deposit", "point-and-deposit", 7),
+          buildIconTrading(
+              "top 02 sales (quantity)", "top-20-sales-quantity", 7),
+          buildIconTrading("Top 20 sales (amount)", "top-20-sales-amount", 8),
+          buildIconTrading("Top 20 high margin", "top-20-high-margin", 8),
+          buildIconTrading(
+              "Top 20 declined product", "top-20-declined-product", 8),
+          buildIconTrading(
               "Sales order oustanding Recap", "sales-order-outstanding", 5),
-          buildIcon("Sales forecast VS reality", "sale-forecast", 9),
-          buildIcon("Top 20 sales return", "top-20-sales-return", 8),
-          buildIcon(
+          buildIconTrading("Sales forecast VS reality", "sale-forecast", 9),
+          buildIconTrading("Top 20 sales return", "top-20-sales-return", 8),
+          buildIconTrading(
               "Top 20 return to vendor", "top-20-sales-return-to-vendor", 9),
-          buildIcon("Top 100 margin of item master",
+          buildIconTrading("Top 100 margin of item master",
               "top-100-margin-of-item-master", 9),
-          buildIcon("Report of discount", "report-of-discount", 9),
-          buildIcon("Summary order / outgoing per month", "summary-order", 0),
-          buildIcon("Purchase order outstanding", "purchase-order", 9),
-          buildIcon("Top 20 quantity", "top-20-quantity", 13),
-          buildIcon("Sales shipment inquiry", "sales-shipment", 5),
-          buildIcon("Sales order outstanding", "sales-order", 5),
+          buildIconTrading("Report of discount", "report-of-discount", 9),
+          buildIconTrading(
+              "Summary order / outgoing per month", "summary-order", 0),
+          buildIconTrading("Purchase order outstanding", "purchase-order", 9),
+          buildIconTrading("Top 20 quantity", "top-20-quantity", 13),
+          buildIconTrading("Sales shipment inquiry", "sales-shipment", 5),
+          buildIconTrading("Sales order outstanding", "sales-order", 5),
         ],
       ),
     );
   }
 
-  Container buildIcon(String title, String image, double height) {
+  Container buildIconTrading(String title, String image, double height) {
     return Container(
       padding: const EdgeInsets.all(8),
       child: Container(

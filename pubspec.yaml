@@ -60,6 +60,9 @@ flutter:
     - assets/images/
     - assets/homeAsset/
     - assets/tradingAsset/
+    - assets/inventoryAsset/
+    - assets/masterAsset/
+    - assets/financeAsset/
 
 
 

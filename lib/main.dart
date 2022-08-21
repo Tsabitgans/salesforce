@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project/botton_nav_bar.dart';
+import 'package:project/finance_page.dart';
 
 import 'package:project/home_test.dart';
+import 'package:project/inventory_page.dart';
+import 'package:project/master_page.dart';
 import 'package:project/product_page.dart';
 import 'package:project/trading_page.dart';
 
@@ -36,9 +39,9 @@ class _RootPageState extends State<RootPage> {
     homeTest(),
     productPage(),
     trading(),
-    trading(),
-    trading(),
-    trading(),
+    inventoryPage(),
+    masterPage(),
+    financePage(),
   ];
   @override
   Widget build(BuildContext context) {
