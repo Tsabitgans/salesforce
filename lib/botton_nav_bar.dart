@@ -1,13 +1,14 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// ignore_for_file: non_constant_identifier_names, duplicate_ignore
+
 import 'package:flutter/material.dart';
 
 class BottomNav extends StatefulWidget {
   final int defaultSelectedIndex;
   final Function(int) onChange;
 
-  BottomNav({this.defaultSelectedIndex = 0, required this.onChange});
+  const BottomNav(
+      {Key? key, this.defaultSelectedIndex = 0, required this.onChange})
+      : super(key: key);
 
   @override
   State<BottomNav> createState() => _BottomNavState();
@@ -22,62 +23,86 @@ class _BottomNavState extends State<BottomNav> {
 
   int _selectedItemIndex = 0;
 
-  var White = Colors.white;
-  var Grey = Color(0xFFD9D9D9);
+  var bank = [
+    const Color(0xFF174749),
+    const Color(0xFF008B92),
+    const Color(0xFF008B92),
+    const Color(0xFFDE8F19),
+    const Color(0xFFDE2519),
+    const Color(0xFF3D1E6D),
+  ];
+
+  late Color? defaultColor;
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
 
     _selectedItemIndex = widget.defaultSelectedIndex;
+    defaultColor = bank[_selectedItemIndex];
   }
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        BuildNavItems(0, "Home", 65, Grey),
-        BuildNavItems(1, "product", 55, White),
-        BuildNavItems(2, "trading", 75, Grey),
-        BuildNavItems(3, "inventory", 70, White),
-        BuildNavItems(4, "master", 70, Grey),
-        BuildNavItems(5, "finance", 40, White)
+        BuildNavItems(0, "home", 1, const Color(0xFF41DE78), "HOME"),
+        BuildNavItems(1, "product", 1, const Color(0xFF0DF5E3), "PRODUCT"),
+        BuildNavItems(2, "trading", 1, const Color(0xFF0DF5E3), "TRADING"),
+        BuildNavItems(3, "inventory", 1, const Color(0xFFF6EE16), "INVENTORY"),
+        BuildNavItems(4, "master", 1, const Color(0xFFF60000), "MASTER"),
+        BuildNavItems(5, "finance", 1, const Color(0xFF8874A3), "FINANCE")
       ],
     );
   }
 
-  Widget BuildNavItems(int index, String name, double scale, var DefaultColor) {
-    return GestureDetector(
+  // ignore: non_constant_identifier_names
+  Widget BuildNavItems(
+      int index, String name, double scale, var SelectedColor, String title) {
+    return Expanded(
+      child: GestureDetector(
         onTap: () {
           widget.onChange(index);
+
           setState(() {
             _selectedItemIndex = index;
+
+            defaultColor = bank[index];
           });
         },
         child: Container(
-          height: 85,
+          height: 60,
           decoration: BoxDecoration(
-              color: _selectedItemIndex == index ? Colors.blue : DefaultColor),
-          child: Stack(
+              color:
+                  _selectedItemIndex == index ? SelectedColor : defaultColor),
+          child: Column(
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width / 6,
-                child: Image.asset(
-                  "assets/images/" + name + ".png",
-                  scale: scale,
+              Expanded(
+                flex: 3,
+                child: Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/" + name + ".png"))),
                 ),
               ),
-              Container(
-                width: MediaQuery.of(context).size.width / 6,
-                alignment: Alignment(0, 0.65),
+              Expanded(
+                flex: 1,
                 child: Text(
-                  name,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                  title,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 9,
+                      color: _selectedItemIndex == index
+                          ? Colors.black
+                          : Colors.white),
                 ),
               ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

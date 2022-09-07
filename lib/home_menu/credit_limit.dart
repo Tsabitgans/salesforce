@@ -1,153 +1,176 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:project/main.dart';
 
-class creditLimit extends StatefulWidget {
-  const creditLimit({Key? key}) : super(key: key);
+class CreditLimit extends StatefulWidget {
+  const CreditLimit({Key? key}) : super(key: key);
 
   @override
-  State<creditLimit> createState() => _creditLimitState();
+  State<CreditLimit> createState() => _CreditLimitState();
 }
 
-class _creditLimitState extends State<creditLimit> {
+class _CreditLimitState extends State<CreditLimit> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          alignment: Alignment(-0.25, 0),
-          width: MediaQuery.of(context).size.width,
-          child: Text(
-            "Credit Limit",
-            style: TextStyle(fontSize: 20),
+    return Material(
+      child: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.only(left: 10),
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RootPage(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          scale: 0.5,
+                          image: AssetImage("assets/images/back.png"),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(width: 30),
+                  Container(
+                    padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    width: 200,
+                    height: 50,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF174749),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: const Text(
+                              "CREDIT LIMIT",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 14),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 245,
+              ),
+              Container(
+                padding: const EdgeInsets.only(left: 38),
+                height: 160,
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 160,
+                      width: 135,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25),
+                        ),
+                        color: Color(0xFF174749),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(top: 10),
+                          ),
+                          Container(
+                            height: 90,
+                            width: 90,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/homeAsset/cash.png"),
+                              ),
+                            ),
+                          ),
+                          const Text(
+                            "Rp 0",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: const Text(
+                              "Credit Limit : 4",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    Container(
+                      height: 160,
+                      width: 135,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25),
+                        ),
+                        color: Color(0xFF174749),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(),
+                          Container(
+                            height: 100,
+                            width: 100,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/homeAsset/card.png"),
+                              ),
+                            ),
+                          ),
+                          const Text(
+                            "Rp 0",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: const Text(
+                              "Credit Limit : 3",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
-        ),
-      ),
-      body: Container(
-        color: Color(0xFFC5F1FF),
-        child: Column(
-          children: [
-            Container(
-              height: 30,
-              color: Colors.transparent,
-            ),
-            Container(
-              height: 85,
-              width: MediaQuery.of(context).size.width - 50,
-              child: Row(
-                children: [
-                  Container(
-                    height: 85,
-                    width: 85,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFC5F1FF),
-                      image: DecorationImage(
-                        image: AssetImage("assets/homeAsset/cash.png"),
-                      ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        alignment: Alignment.bottomCenter,
-                        width: MediaQuery.of(context).size.width - 135,
-                        height: 40,
-                        child: Text(
-                          "Rp 0",
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 30,
-                        child: Text(
-                          "Credit Limit : 1",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 8,
-                    offset: Offset(0, 7), // changes position of shadow
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 20,
-              color: Colors.transparent,
-            ),
-            Container(
-              height: 85,
-              width: MediaQuery.of(context).size.width - 50,
-              child: Row(
-                children: [
-                  Container(
-                    height: 85,
-                    width: 85,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFC5F1FF),
-                      image: DecorationImage(
-                        image: AssetImage("assets/homeAsset/credit.png"),
-                      ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        alignment: Alignment.bottomCenter,
-                        width: MediaQuery.of(context).size.width - 135,
-                        height: 40,
-                        child: Text(
-                          "Rp 0",
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 30,
-                        child: Text(
-                          "Credit Limit : 1",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 8,
-                    offset: Offset(0, 7), // changes position of shadow
-                  ),
-                ],
-              ),
-            ),
-          ],
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage("assets/images/text.jpg"),
+          )),
         ),
       ),
     );

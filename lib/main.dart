@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       color: Colors.red,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: RootPage(),
+      home: const RootPage(),
     );
   }
 }
@@ -35,18 +35,18 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int _indexPage = 0;
-  final Screen = [
-    homeTest(),
-    productPage(),
-    trading(),
-    inventoryPage(),
-    masterPage(),
-    financePage(),
+  final screenData = [
+    const homeTest(),
+    const productPage(),
+    const trading(),
+    const inventoryPage(),
+    const masterPage(),
+    const financePage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFCAE9FF),
+      backgroundColor: const Color.fromARGB(255, 211, 211, 211),
       bottomNavigationBar: BottomNav(
         onChange: (val) {
           setState(() {
@@ -55,7 +55,7 @@ class _RootPageState extends State<RootPage> {
         },
         defaultSelectedIndex: 0,
       ),
-      body: Screen[_indexPage],
+      body: screenData[_indexPage],
     );
   }
 }

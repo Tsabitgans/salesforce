@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// ignore_for_file: camel_case_types, duplicate_ignore
 
+import 'package:flutter/material.dart';
+import 'package:project/home_menu/credit_limit.dart';
+
+// ignore: camel_case_types
 class financePage extends StatefulWidget {
   const financePage({Key? key}) : super(key: key);
 
@@ -12,12 +14,11 @@ class financePage extends StatefulWidget {
 class _financePageState extends State<financePage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 15),
+    return SafeArea(
       child: GridView.count(
         primary: false,
-        padding: const EdgeInsets.all(20),
-        crossAxisSpacing: 38,
+        padding: const EdgeInsets.all(15),
+        crossAxisSpacing: 30,
         mainAxisSpacing: 18,
         crossAxisCount: 3,
         children: <Widget>[
@@ -42,14 +43,22 @@ class _financePageState extends State<financePage> {
       String title, String image, double height, double fontSize) {
     return Container(
       padding: const EdgeInsets.all(8),
-      child: Container(
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CreditLimit(),
+            ),
+          );
+        },
         child: Column(
           children: [
             Container(
               height: 45,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  alignment: Alignment(0, -0.45),
+                  alignment: const Alignment(0, -0.45),
                   image: AssetImage('assets/financeAsset/' + image + '.png'),
                 ),
               ),
@@ -57,22 +66,20 @@ class _financePageState extends State<financePage> {
             Container(
               height: height,
             ),
-            Container(
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: fontSize,
-                  fontWeight: FontWeight.w800,
-                ),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 9,
+                fontWeight: FontWeight.w800,
               ),
             )
           ],
         ),
       ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(25)),
-        color: Color(0xFFA7E2F4),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        color: Color(0xFFFDFDFD),
       ),
     );
   }
