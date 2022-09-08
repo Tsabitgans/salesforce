@@ -17,6 +17,8 @@ class homeTest extends StatefulWidget {
   State<homeTest> createState() => _homeTestState();
 }
 
+int indexTheme = 1;
+
 class _homeTestState extends State<homeTest> {
   @override
   Widget build(BuildContext context) {
@@ -148,13 +150,13 @@ class _homeTestState extends State<homeTest> {
                         Row(
                           children: [
                             homeIconBuild(const CreditLimit(), "CREDIT LIMIT",
-                                "credit-limit", "", 1),
+                                "credit-limit", "", indexTheme),
                             Container(width: 20),
                             homeIconBuild(const MTransaction(), "TRANSACTION",
-                                "transaction-monthly", "(MONTHLY)", 1),
+                                "transaction-monthly", "(MONTHLY)", indexTheme),
                             Container(width: 20),
                             homeIconBuild(const YTransaction(), "TRANSACTION",
-                                "transaction-yearly", "(YEARLY)", 1),
+                                "transaction-yearly", "(YEARLY)", indexTheme),
                           ],
                         ),
                         Container(
@@ -163,13 +165,17 @@ class _homeTestState extends State<homeTest> {
                         Row(
                           children: [
                             homeIconBuild(const PointAndDeposit(), "POINT AND",
-                                "point-and-deposit", "DEPOSIT", 1),
+                                "point-and-deposit", "DEPOSIT", indexTheme),
                             Container(width: 20),
-                            homeIconBuild(const YTransaction(), "BARCODE STOCK",
-                                "barcode-stock-checking", "CHECKING", 1),
+                            homeIconBuild(
+                                const YTransaction(),
+                                "BARCODE STOCK",
+                                "barcode-stock-checking",
+                                "CHECKING",
+                                indexTheme),
                             Container(width: 20),
                             homeIconBuild(const SalesAmount(), "TOP 20 SALES",
-                                "top-20-sales", "(AMOUNT)", 1),
+                                "top-20-sales", "(AMOUNT)", indexTheme),
                           ],
                         ),
                         Container(
@@ -178,21 +184,21 @@ class _homeTestState extends State<homeTest> {
                         Row(
                           children: [
                             homeIconBuild(const SalesQuantity(), "TOP 20 SALES",
-                                "top-20-quantity", "(QUANTITY)", 1),
+                                "top-20-quantity", "(QUANTITY)", indexTheme),
                             Container(width: 20),
                             homeIconBuild(
                                 const SalesShipment(),
                                 "SALES SHIPMENT",
                                 "sales-shipment",
                                 "INQUIRY",
-                                1),
+                                indexTheme),
                             Container(width: 20),
                             homeIconBuild(
                               const YTransaction(),
                               "SALES ORDER",
                               "sales-order",
                               "LIST",
-                              1,
+                              indexTheme,
                             ),
                           ],
                         ),

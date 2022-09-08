@@ -89,85 +89,193 @@ class _SalesShipmentState extends State<SalesShipment> {
                   ),
                 ],
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.43,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(24),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      spreadRadius: 0.1,
-                      blurRadius: 0.5,
-                      offset: const Offset(0, 8), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: 25,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          color: Color(0xFF41DE78),
+              Stack(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: MediaQuery.of(context).size.height * 0.16,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFECECEC),
+                      borderRadius: BorderRadius.circular(25),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25),
+                          spreadRadius: 0.01,
+                          blurRadius: 0.8,
+                          offset:
+                              const Offset(0, 4), // changes position of shadow
                         ),
-                        child: Row(
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.125,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: const [
                             Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  "NO",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
                               child: Text(
-                                "PRODUCT",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Text(
-                                "AMOUNT",
+                                "ITEM NAME",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                ),
+                                    fontSize: 10, fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                "SALES NO.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                "SALES DATE",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                "CUSTOMER",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w500),
                               ),
                             ),
                           ],
-                        ),
-                      ),
+                        )
+                      ],
                     ),
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.37,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: MediaQuery.of(context).size.height * 0.11,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(24),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25),
+                          spreadRadius: 0.01,
+                          blurRadius: 0.8,
+                          offset:
+                              const Offset(0, 4), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(top: 10),
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Container(
+                                  padding: const EdgeInsets.only(top: 5),
+                                  height: 30,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF41DE78),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(11),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    "19 APR 2021",
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  height: 30,
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/homeAsset/arrow.png"),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Container(
+                                  padding: const EdgeInsets.only(top: 5),
+                                  height: 30,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF41DE78),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(11),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    "28 APR 2021",
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: SizedBox(
+                            height: 40,
                             width: MediaQuery.of(context).size.width * 0.8,
-                            child: ListView(
-                              children: const [],
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                const Text(
+                                  "1/1",
+                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
+                                Container(width: 10),
+                                Container(
+                                  width: 28,
+                                  height: 28,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF41DE78),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(4),
+                                    ),
+                                  ),
+                                  child: const Image(
+                                      image: AssetImage(
+                                          "assets/homeAsset/left-arrow.png")),
+                                ),
+                                Container(width: 10),
+                                Container(
+                                  width: 28,
+                                  height: 28,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF41DE78),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(4),
+                                    ),
+                                  ),
+                                  child: const Image(
+                                      image: AssetImage(
+                                          "assets/homeAsset/right-arrow.png")),
+                                ),
+                              ],
                             ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
