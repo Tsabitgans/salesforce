@@ -12,6 +12,7 @@ class financePage extends StatefulWidget {
 }
 
 class _financePageState extends State<financePage> {
+  int indexTheme = 1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,25 +23,31 @@ class _financePageState extends State<financePage> {
         mainAxisSpacing: 18,
         crossAxisCount: 3,
         children: <Widget>[
-          buildIconMaster("Gross profit", "gross-profit", 9, 13),
-          buildIconMaster("Vendor", "ar-aging", 9, 13),
-          buildIconMaster("A / R Aging", "ap-aging", 9, 12),
-          buildIconMaster("Cash Statement", "cash-statement", 5, 12),
-          buildIconMaster("Summary Expensive", "summary-expensive", 6, 11),
-          buildIconMaster("Trial Balance", "trial-balance", 9, 12),
-          buildIconMaster("Balance sheet", "balance-sheet", 9, 12),
-          buildIconMaster("Income Statement", "income-statement", 6, 12),
-          buildIconMaster("Balance sheet (Q)", "balance-sheet-q", 6, 12),
-          buildIconMaster("Income Statement (Q)", "income-statement-q", 6, 12),
-          buildIconMaster("Summary     Jurnal", "summary-jurnal", 6, 12),
-          buildIconMaster("Fixed Assets", "fixed-assets", 10, 12),
+          buildIconMaster("Gross profit", "gross-profit", 9, 13, indexTheme),
+          buildIconMaster("Vendor", "ar-aging", 9, 13, indexTheme),
+          buildIconMaster("A / R Aging", "ap-aging", 9, 12, indexTheme),
+          buildIconMaster(
+              "Cash Statement", "cash-statement", 5, 12, indexTheme),
+          buildIconMaster(
+              "Summary Expensive", "summary-expensive", 6, 11, indexTheme),
+          buildIconMaster("Trial Balance", "trial-balance", 9, 12, indexTheme),
+          buildIconMaster("Balance sheet", "balance-sheet", 9, 12, indexTheme),
+          buildIconMaster(
+              "Income Statement", "income-statement", 6, 12, indexTheme),
+          buildIconMaster(
+              "Balance sheet (Q)", "balance-sheet-q", 6, 12, indexTheme),
+          buildIconMaster(
+              "Income Statement (Q)", "income-statement-q", 6, 12, indexTheme),
+          buildIconMaster(
+              "Summary     Jurnal", "summary-jurnal", 6, 12, indexTheme),
+          buildIconMaster("Fixed Assets", "fixed-assets", 10, 12, indexTheme),
         ],
       ),
     );
   }
 
   Container buildIconMaster(
-      String title, String image, double height, double fontSize) {
+      String title, String image, double height, double fontSize, index) {
     return Container(
       padding: const EdgeInsets.all(8),
       child: GestureDetector(
@@ -59,7 +66,10 @@ class _financePageState extends State<financePage> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   alignment: const Alignment(0, -0.45),
-                  image: AssetImage('assets/financeAsset/' + image + '.png'),
+                  image: AssetImage('assets/financeAsset/' +
+                      image +
+                      (index == 2 ? "-p" : "") +
+                      '.png'),
                 ),
               ),
             ),

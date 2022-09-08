@@ -17,9 +17,8 @@ class homeTest extends StatefulWidget {
   State<homeTest> createState() => _homeTestState();
 }
 
-int indexTheme = 1;
-
 class _homeTestState extends State<homeTest> {
+  int indexTheme = 1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

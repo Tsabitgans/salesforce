@@ -12,6 +12,7 @@ class trading extends StatefulWidget {
 }
 
 class _tradingState extends State<trading> {
+  int indexTheme = 1;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,38 +25,48 @@ class _tradingState extends State<trading> {
         crossAxisCount: 3,
         children: <Widget>[
           buildIconTrading(
-              "TRANSACTION", "transaction-monthly", 5, "(MONTHLY)"),
-          buildIconTrading("TRANSACTION", "transaction-yearly", 5, "(YEARLY)"),
-          buildIconTrading("POINT AND", "point-and-deposit", 5, "DEPOSIT"),
-          buildIconTrading("TOP 20", "top-20-quantity", 5, "(QUANTITY)"),
+              "TRANSACTION", "transaction-monthly", 5, "(MONTHLY)", indexTheme),
           buildIconTrading(
-              "TOP 20 SALES", "top-20-sales-amount", 5, "(QUANTITY)"),
-          buildIconTrading("TOP 20 HIGH", "top-20-high-margin", 5, "MARGIN"),
+              "TRANSACTION", "transaction-yearly", 5, "(YEARLY)", indexTheme),
           buildIconTrading(
-              "TOP 20", "top-20-declined-product", 5, "DECLINED PRODUCT"),
+              "POINT AND", "point-and-deposit", 5, "DEPOSIT", indexTheme),
+          buildIconTrading(
+              "TOP 20", "top-20-quantity", 5, "(QUANTITY)", indexTheme),
+          buildIconTrading("TOP 20 SALES", "top-20-sales-amount", 5,
+              "(QUANTITY)", indexTheme),
+          buildIconTrading(
+              "TOP 20 HIGH", "top-20-high-margin", 5, "MARGIN", indexTheme),
+          buildIconTrading("TOP 20", "top-20-declined-product", 5,
+              "DECLINED PRODUCT", indexTheme),
           buildIconTrading("SALES ORDER", "sales-order-outstanding-recap", 5,
-              "OUTSTANDING RECAP"),
+              "OUTSTANDING RECAP", indexTheme),
+          buildIconTrading("SALES FORECAST", "sales-forecast-vs-reality", 5,
+              "VS REALITY", indexTheme),
           buildIconTrading(
-              "SALES FORECAST", "sales-forecast-vs-reality", 5, "VS REALITY"),
-          buildIconTrading("TOP 20 SALES", "top-20-sales-return", 5, "RETURN"),
+              "TOP 20 SALES", "top-20-sales-return", 5, "RETURN", indexTheme),
+          buildIconTrading("TOP 20 RETURN", "top-20-return-to-vendor", 5,
+              "TO VENDOR", indexTheme),
           buildIconTrading(
-              "TOP 20 RETURN", "top-20-return-to-vendor", 5, "TO VENDOR"),
-          buildIconTrading("TOP 100", "top-100-margin", 5, "OF ITEM MASTER"),
-          buildIconTrading("REPORT OF", "report-of-discount", 5, "DISCOUNT"),
+              "TOP 100", "top-100-margin", 5, "OF ITEM MASTER", indexTheme),
           buildIconTrading(
-              "SUMMARY ORDER", "summary-order", 5, "/OUTGOING PER MONTH"),
+              "REPORT OF", "report-of-discount", 5, "DISCOUNT", indexTheme),
+          buildIconTrading("SUMMARY ORDER", "summary-order", 5,
+              "/OUTGOING PER MONTH", indexTheme),
           buildIconTrading(
-              "PURCHASE ORDER", "purchase-order", 5, "OUTSTANDING"),
-          buildIconTrading("PURCHAS ACC", "purchase-acc", 5, "BY VENDOR"),
-          buildIconTrading("SALES SHIPMENT", "sales-shipment", 5, "INQUIRY"),
-          buildIconTrading("SALES ORDER", "sales-order", 5, "OUTSTANDING"),
+              "PURCHASE ORDER", "purchase-order", 5, "OUTSTANDING", indexTheme),
+          buildIconTrading(
+              "PURCHAS ACC", "purchase-acc", 5, "BY VENDOR", indexTheme),
+          buildIconTrading(
+              "SALES SHIPMENT", "sales-shipment", 5, "INQUIRY", indexTheme),
+          buildIconTrading(
+              "SALES ORDER", "sales-order", 5, "OUTSTANDING", indexTheme),
         ],
       ),
     );
   }
 
   Container buildIconTrading(
-      String title, String image, double height, String subTitle) {
+      String title, String image, double height, String subTitle, indexTheme) {
     return Container(
       padding: const EdgeInsets.all(10),
       child: Column(
@@ -64,7 +75,10 @@ class _tradingState extends State<trading> {
             height: 43,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/tradingAsset/' + image + '.png'),
+                image: AssetImage('assets/tradingAsset/' +
+                    image +
+                    (indexTheme == 2 ? "-p" : "") +
+                    '.png'),
               ),
             ),
           ),

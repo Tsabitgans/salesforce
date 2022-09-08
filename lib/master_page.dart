@@ -10,6 +10,7 @@ class masterPage extends StatefulWidget {
 }
 
 class _masterPageState extends State<masterPage> {
+  int indexTheme = 1;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,17 +22,17 @@ class _masterPageState extends State<masterPage> {
         mainAxisSpacing: 20,
         crossAxisCount: 3,
         children: <Widget>[
-          buildIconMaster("Customer", "customer", 6, 12),
-          buildIconMaster("Vendor", "vendor", 6, 12),
-          buildIconMaster("Employee", "employee", 6, 12),
-          buildIconMaster("COA", "coa", 6, 12),
+          buildIconMaster("Customer", "customer", 6, 12, indexTheme),
+          buildIconMaster("Vendor", "vendor", 6, 12, indexTheme),
+          buildIconMaster("Employee", "employee", 6, 12, indexTheme),
+          buildIconMaster("COA", "coa", 6, 12, indexTheme),
         ],
       ),
     );
   }
 
   Container buildIconMaster(
-      String title, String image, double height, double fontSize) {
+      String title, String image, double height, double fontSize, indexTheme) {
     return Container(
       padding: const EdgeInsets.all(8),
       child: Column(
@@ -41,7 +42,10 @@ class _masterPageState extends State<masterPage> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 alignment: const Alignment(0, -0.45),
-                image: AssetImage('assets/masterAsset/' + image + '.png'),
+                image: AssetImage('assets/masterAsset/' +
+                    image +
+                    (indexTheme == 2 ? "-p" : "") +
+                    '.png'),
               ),
             ),
           ),

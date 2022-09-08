@@ -10,6 +10,7 @@ class inventoryPage extends StatefulWidget {
 }
 
 class _inventoryPageState extends State<inventoryPage> {
+  int indexTheme = 1;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,39 +22,45 @@ class _inventoryPageState extends State<inventoryPage> {
         mainAxisSpacing: 20,
         crossAxisCount: 3,
         children: <Widget>[
-          buildIconInventory("INVENTORY", "inventory-ratio", 8, "RATIO"),
           buildIconInventory(
-              "INVT. HISTORICAL", "inventory-history", 8, "TRANSACTION"),
-          buildIconInventory("INVENTORY", "inventory-amount", 8, "AMOUNT"),
+              "INVENTORY", "inventory-ratio", 8, "RATIO", indexTheme),
+          buildIconInventory("INVT. HISTORICAL", "inventory-history", 8,
+              "TRANSACTION", indexTheme),
           buildIconInventory(
-              "INVENTORY COAST", "inventory-coast", 7, "& PRICE LIST"),
-          buildIconInventory("SAFETY STOCK", "safety-stock-info", 8, "INFO"),
-          buildIconInventory("ITEM AGE", "item-age", 8, "COMPOSITION VALUE"),
+              "INVENTORY", "inventory-amount", 8, "AMOUNT", indexTheme),
+          buildIconInventory("INVENTORY COAST", "inventory-coast", 7,
+              "& PRICE LIST", indexTheme),
           buildIconInventory(
-              "INVENTORY", "inv-recalculated", 8, "RECALCULATED"),
+              "SAFETY STOCK", "safety-stock-info", 8, "INFO", indexTheme),
+          buildIconInventory(
+              "ITEM AGE", "item-age", 8, "COMPOSITION VALUE", indexTheme),
+          buildIconInventory(
+              "INVENTORY", "inv-recalculated", 8, "RECALCULATED", indexTheme),
           buildIconInventory("REPORT OF", "report-of-inventory-valuation", 8,
-              "INVENTORY VALUATION"),
+              "INVENTORY VALUATION", indexTheme),
           buildIconInventory(
-              "GOODS", "goods-received-notes", 8, "RECIEVE NOTES"),
+              "GOODS", "goods-received-notes", 8, "RECIEVE NOTES", indexTheme),
           buildIconInventory(
-              "RETURN FROM", "return-from-customer", 8, "CUSTOMER"),
-          buildIconInventory("RETURN TO", "return-to-vendor", 8, "VENDOR"),
-          buildIconInventory("REPORT OF", "report-of-stock", 8, "STOCK"),
+              "RETURN FROM", "return-from-customer", 8, "CUSTOMER", indexTheme),
           buildIconInventory(
-              "REPORT INVENTORY", "report-inventory-transfer", 7, "TRANSFER"),
+              "RETURN TO", "return-to-vendor", 8, "VENDOR", indexTheme),
           buildIconInventory(
-              "REPORT WAREHOUSE", "report-warehouse-transfer", 7, "TRANSFER"),
-          buildIconInventory(
-              "REPORT INVENTORY", "report-inventory-reclass", 7, "RECLASS"),
-          buildIconInventory(
-              "REPORT PENDING", "report-pending-transaction", 8, "TRANSACTION"),
+              "REPORT OF", "report-of-stock", 8, "STOCK", indexTheme),
+          buildIconInventory("REPORT INVENTORY", "report-inventory-transfer", 7,
+              "TRANSFER", indexTheme),
+          buildIconInventory("REPORT WAREHOUSE", "report-warehouse-transfer", 7,
+              "TRANSFER", indexTheme),
+          buildIconInventory("REPORT INVENTORY", "report-inventory-reclass", 7,
+              "RECLASS", indexTheme),
+          buildIconInventory("REPORT PENDING", "report-pending-transaction", 8,
+              "TRANSACTION", indexTheme),
         ],
       ),
     );
   }
 
   Container buildIconInventory(
-      String title, String image, double fontSize, String title2) {
+      String title, String image, double fontSize, String title2, index) {
     return Container(
       padding: const EdgeInsets.only(top: 10),
       child: Container(
@@ -65,7 +72,10 @@ class _inventoryPageState extends State<inventoryPage> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   alignment: const Alignment(0, -0.45),
-                  image: AssetImage('assets/inventoryAsset/' + image + '.png'),
+                  image: AssetImage('assets/inventoryAsset/' +
+                      image +
+                      (index == 2 ? "-p" : "") +
+                      '.png'),
                 ),
               ),
             ),
